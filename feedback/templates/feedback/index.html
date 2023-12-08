@@ -11,7 +11,7 @@
     {% if user.is_authenticated %}
         <!-- Use a custom template filter from "feedback/templatetags/user_filters" -->
         {% if user|has_group:"topic_masters" %}
-            <a href="{% url 'feedback:create_topic' %}">Create New Topic</a>
+            <a href="{% url 'feedback:create_topic' %}" class="d-flex justify-content-center">Create New Topic</a>
         {% endif %}
     {% endif %}
 
@@ -20,7 +20,10 @@
     <table>
         {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit">
+    <div class="d-flex justify-content-center p-3">
+    <input type="submit" value="Submit" class="btn btn-outline-dark"></div>
 </form>
-<a href="/">Return to Account Home</a>
+<div class="d-flex justify-content-center p-3">
+<a href="/" class="btn btn-outline-dark" class="d-flex justify-content-center">Return to Account Home</a>
+</div>
 {% endblock %}
